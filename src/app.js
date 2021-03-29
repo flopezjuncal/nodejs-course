@@ -18,12 +18,16 @@ const forecast = require("./utils/forecast")
 
 
 // - - - C O N S T A N T S - - -
+
 const defaultCoordinates = {latitude: "-34.9032800", longitude: "-56.1881600", location: "Montevideo, Uruguay"}
+
+const app = express()
+
+const port = process.env.PORT || 3000
 
 
 // - - - - C O N F I G U R A T I O N - - - -
 
-const app = express()
 
 // podemos acceder a example.html: localhost:3000/example.html (ya que esta en public!)
 
@@ -119,6 +123,6 @@ app.get("*", (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log("Server initialized on port 3000")
+app.listen(port, () => {
+    console.log("Server initialized on port " + port)
 })
